@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script> <!-- For ChevronLeft, ChevronRight, and Star -->
+  <style>
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .scroll-snap-align-center {
+      scroll-snap-align: center;
+    }
+    .rotate-star {
+      transition: transform 0.5s ease;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+  <div class="relative w-full max-w-4xl mx-auto px-4">
+    <div id="carousel" class="flex overflow-x-scroll py-8 hide-scrollbar" style="scroll-snap-type: x mandatory;">
+      <!-- Carousel Items -->
+      <div class="flex-shrink-0 w-64 h-64  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <!-- Repeat 9 Cards -->
+      <div class="flex-shrink-0 w-64 h-64  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <div class="flex-shrink-0 w-64 h-64  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <div class="flex-shrink-0 w-64 h-64  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <div class="flex-shrink-0 w-64 h-64 p-4 border border-black rounded-2xl mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <div class="flex-shrink-0 w-64 h-64 p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <div class="flex-shrink-0 w-64 h-64  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <div class="flex-shrink-0 w-64 h-64 border  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+      <div class="flex-shrink-0 w-64 h-64  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
+        <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+        <p class="mt-2 text-center">Cakes</p>
+      </div>
+    </div>
+
+    <!-- Star and Arrow Controls -->
+    <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
+      <!-- Left Arrow Button -->
+      <button id="prev" class="text-3xl p-2 " aria-label="Previous">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <!-- Rotating Star -->
+      <div id="star" class="text-2xl p-2 rotate-star">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.86L12 17.77 5.82 21l1.18-6.86-5-4.87 6.91-1.01L12 2z" />
+        </svg>
+      </div>
+
+      <!-- Right Arrow Button -->
+      <button id="next" class="text-3xl p-2" aria-label="Next">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let rotation = 0
+    const carousel = document.getElementById('carousel')
+    const star = document.getElementById('star')
+
+    // Scroll function
+    function scroll(direction) {
+      const scrollAmount = 220
+      carousel.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      })
+      rotation += 45 // Rotate star by 45 degrees on scroll
+      star.style.transform = `rotate(${rotation}deg)`
+    }
+
+    // Scroll Event Listener
+    carousel.addEventListener('scroll', () => {
+      rotation += 3 // Slightly rotate star on manual scroll
+      star.style.transform = `rotate(${rotation}deg)`
+    })
+
+    // Button Event Listeners
+    document.getElementById('prev').addEventListener('click', () => scroll('left'))
+    document.getElementById('next').addEventListener('click', () => scroll('right'))
+  </script>
+
+</body>
+</html>
