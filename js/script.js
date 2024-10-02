@@ -1,5 +1,5 @@
 const bannerContent = `
-<span class="inline-flex items-center mx-4">
+<span class="inline-flex items-center mx-4 font-extralight">
     ENJOY $10 DELIVERY ACROSS SYDNEY
     <svg class="w-4 h-4 ml-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z"/>
