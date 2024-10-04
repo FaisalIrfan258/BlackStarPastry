@@ -1,11 +1,17 @@
 @import url(https://db.onlinewebfonts.com/c/ceded02f923d0bae9173c718a228a064?family=Alphabet+Soup);
 @import url(https://db.onlinewebfonts.com/c/7aac5180c43b327e15b994dc62c31553?family=Simpliciter+Sans);
+
+
+
 body{
     font-family: "Simpliciter Sans";
 }
 h1{
     font-family: "Alphabet Soup";
 }
+
+
+
 
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
@@ -20,3 +26,43 @@ h1{
   .rotate-star {
     transition: transform 0.5s ease;
   }
+
+  .slider-section {
+    height: 22vh;
+    bottom: 1;
+    position: fixed;
+    width: 100%;
+  }
+
+  .wheel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200vw;
+    height: 200vw;
+    max-width: 1300px;
+    max-height: 1300px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wheel__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6%;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    pointer-events: none;
+    z-index: 999;
+    cursor: pointer;
+  }
+
+
