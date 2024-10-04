@@ -6,6 +6,11 @@
     <title>BLACK STAR PASTERY</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js"></script>
+<script src="https://assets.codepen.io/16327/Flip.min.js"></script>
+
   </head>
   <body class="bg-white">
     <div class="relative overflow-hidden bg-black text-white py-2">
@@ -86,48 +91,88 @@
     </header>
 
 
-    <div class="relative w-full max-w-4xl mx-auto px-4">
-        <div id="carousel" class="flex overflow-x-scroll py-8 hide-scrollbar" style="scroll-snap-type: x mandatory;">
-          <!-- Carousel Items -->
-          <div class="flex-shrink-0 w-56 h-72  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72 p-4 border border-black rounded-2xl mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72 border  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-          <div class="flex-shrink-0 w-56 h-72  p-4 rounded-2xl border border-black mx-2 scroll-snap-align-center">
-            <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
-            <p class="mt-2 text-center">Cakes</p>
-          </div>
-        </div>
+   
     
-        <!-- Star and Arrow Controls -->
+   <section class="slider-section">
+    <div class="wheel">
+      <!-- Card 1 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 9 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h-3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+      <!-- Card 10 -->
+      <div class="wheel__card">
+        <div class="flex-shrink-0 w-56 h-72 p-4 rounded-2xl border border-black mx-1 scroll-snap-align-center">
+          <img src="/assets/images/Cake.svg" alt="Cake" class="w-full h- 3/4 object-contain">
+          <p class="mt-2 text-center">Cakes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+    
+
+
+
+<!--  Star and Arrow Controls -->
         <div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
           <!-- Left Arrow Button -->
           <button id="prev" class="text-3xl p-2 " aria-label="Previous">
@@ -150,39 +195,9 @@
             </svg>
           </button>
         </div>
-      </div>
+      </div> 
     
-      <script>
-        let rotation = 0
-        const carousel = document.getElementById('carousel')
-        const star = document.getElementById('star')
-    
-        // Scroll function
-        function scroll(direction) {
-          const scrollAmount = 220
-          carousel.scrollBy({
-            left: direction === 'left' ? -scrollAmount : scrollAmount,
-            behavior: 'smooth'
-          })
-          rotation += 45 // Rotate star by 45 degrees on scroll
-          star.style.transform = `rotate(${rotation}deg)`
-        }
-    
-        // Scroll Event Listener
-        carousel.addEventListener('scroll', () => {
-          rotation += 3 // Slightly rotate star on manual scroll
-          star.style.transform = `rotate(${rotation}deg)`
-        })
-    
-        // Button Event Listeners
-        document.getElementById('prev').addEventListener('click', () => scroll('left'))
-        document.getElementById('next').addEventListener('click', () => scroll('right'))
-      </script>
-
-
-
-
-
+     
     <footer class="bg-black text-white py-2 fixed bottom-0 w-full">
       <nav class="flex justify-evenly">
         <a href="#tiktok" class="hover:underline">TikTok</a>
@@ -194,13 +209,13 @@
       </nav>
     </footer>
 
-    <a href="#chat" class="fixed bottom-8 lg:left-40 sm:left-0 z-[-1]">
+    <a href="#chat" class="fixed bottom-8 lg:left-40 sm:left-0">
       <img src="assets/images/boy.png" alt="icon" class="h-24 w-30" />
     </a>
 
     <a
       href="#chat"
-      class="fixed bottom-12 right-5 bg-black p-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300 z-[-1]"
+      class="fixed bottom-12 right-5 bg-black p-3 rounded-full shadow-lg hover:bg-gray-200 transition duration-300"
     >
       <svg
         class="h-10 w-10 text-blue-500"
@@ -219,6 +234,6 @@
       </svg>
     </a>
 
-    <script src="js/script.js   "></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
